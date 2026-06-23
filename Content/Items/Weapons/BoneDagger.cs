@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace necromancerclass.Content.Items
+namespace necromancerclass.Content.Items.Weapons
 {
 	// This is a basic item template.
 	// Please see tModLoader's ExampleMod for every other example:
@@ -23,7 +23,7 @@ namespace necromancerclass.Content.Items
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 6;
 			Item.value = Item.buyPrice(silver: 1);
-			Item.rare = ItemRarityID.Blue;
+			Item.rare = ItemRarityID.White;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
 			Item.scale = 2.0f;

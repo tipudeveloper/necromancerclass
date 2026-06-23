@@ -3,6 +3,12 @@ DamageClasses.Necromancer.DisplayName: Necromancer Damage
 Items: {
 	BoneDagger: {
 		DisplayName: Bone Dagger
-		Tooltip: "Spooky"
+		Tooltip: Spooky
+	}
+
+	BoneHelmet: {
+		SetBonus: Mods.necromancerclass.Items.BoneHelmet.SetBonus
+		DisplayName: Bone Helmet
+		Tooltip: ""
 	}
 }
