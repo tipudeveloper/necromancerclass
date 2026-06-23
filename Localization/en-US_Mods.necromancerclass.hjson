@@ -11,6 +11,16 @@ Items: {
 		DisplayName: Bone Helmet
 		Tooltip: ""
 	}
+
+	BoneBreastplate: {
+		Tooltip: ""
+		DisplayName: Bone Breastplate
+	}
+
+	BoneLeggings: {
+		Tooltip: ""
+		DisplayName: Bone Leggings
+	}
 }
 
 Projectiles.BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
