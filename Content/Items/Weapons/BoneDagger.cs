@@ -19,7 +19,7 @@ namespace necromancerclass.Content.Items.Weapons
 			Item.height = 32;
 			Item.useTime = 30;
 			Item.useAnimation = 10;
-			Item.holdStyle = ItemHoldStyleID.HoldFront;
+			//Item.holdStyle = ItemHoldStyleID.HoldUp;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 6;
 			Item.value = Item.buyPrice(silver: 1);

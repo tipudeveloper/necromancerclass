@@ -11,7 +11,7 @@ namespace necromancerclass.Content.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class BoneHelmet : ModItem
 	{
-		public static readonly int AdditiveGenericDamageBonus = 20;
+		public static readonly int AdditiveNecromancerDamageBonus = 20;
 
 		public static LocalizedText SetBonusText { get; private set; }
 
@@ -22,13 +22,13 @@ namespace necromancerclass.Content.Items.Armor
 			// ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true; // Draw all hair as normal. Used by Mime Mask, Sunglasses
 			// ArmorIDs.Head.Sets.DrawsBackHairWithoutHeadgear[Item.headSlot] = true;
 
-			SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs(AdditiveGenericDamageBonus);
+			SetBonusText = this.GetLocalization("SetBonus").WithFormatArgs(AdditiveNecromancerDamageBonus);
 		}
 
 		public override void SetDefaults() {
 			Item.width = 18; // Width of the item
 			Item.height = 18; // Height of the item
-			Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
+			Item.value = Item.sellPrice(silver: 20); // How many coins the item is worth
 			Item.rare = ItemRarityID.White; // The rarity of the item
 			Item.defense = 5; // The amount of defense the item will give when equipped
 		}
@@ -41,7 +41,7 @@ namespace necromancerclass.Content.Items.Armor
 		// UpdateArmorSet allows you to give set bonuses to the armor.
 		public override void UpdateArmorSet(Player player) {
 			player.setBonus = SetBonusText.Value; // This is the setbonus tooltip: "Increases dealt damage by 20%"
-			player.GetDamage(ModContent.GetInstance<Necromancer>()) += AdditiveGenericDamageBonus / 100f; // Increase dealt damage for all weapon classes by 20%
+			player.GetDamage(ModContent.GetInstance<Necromancer>()) += AdditiveNecromancerDamageBonus / 100f; // Increase dealt damage for all weapon classes by 20%
 		}
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
