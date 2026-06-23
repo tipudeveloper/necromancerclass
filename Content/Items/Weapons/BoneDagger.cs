@@ -5,43 +5,43 @@ using Terraria.ModLoader;
 
 namespace necromancerclass.Content.Items.Weapons
 {
-	// This is a basic item template.
-	// Please see tModLoader's ExampleMod for every other example:
-	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
 	public class BoneDagger : ModItem
 	{
-		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.diablo2mod.hjson' file.
-		public override void SetDefaults()
-		{
-			Item.damage = 5;
-			Item.DamageType = ModContent.GetInstance<Necromancer>();
-			Item.width = 32;
-			Item.height = 32;
-			Item.useTime = 30;
-			Item.useAnimation = 10;
-			//Item.holdStyle = ItemHoldStyleID.HoldUp;
-			Item.useStyle = ItemUseStyleID.Swing;
-			Item.knockBack = 6;
-			Item.value = Item.buyPrice(silver: 1);
+		public override void SetDefaults() {
+			// Alter any of these values as you see fit, but you should probably keep useStyle on 1, as well as the noUseGraphic and noMelee bools
+
+			// Common Properties
 			Item.rare = ItemRarityID.White;
+			Item.value = Item.sellPrice(silver: 5);
+			Item.maxStack = 1;
+
+			// Use Properties
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.useAnimation = 5;
+			Item.useTime = 5;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
-			Item.scale = 2.0f;
+			Item.consumable = false;
+
+			// Weapon Properties			
+			Item.damage = 3;
+			Item.knockBack = 5f;
+			Item.noUseGraphic = true; // The item should not be visible when used
+			Item.noMelee = true; // The projectile will do the damage and not the item
+			Item.DamageType = ModContent.GetInstance<Necromancer>();
+
+			// Projectile Properties
+			Item.shootSpeed = 20f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.BoneDaggerProjectile>(); // The projectile that will be thrown
 		}
-		// This hook runs the exact moment the player clicks to use the item.
-        // It forces the player's sprite to flip and face the mouse immediately.
-        public override bool? UseItem(Player player)
-        {
-            player.direction = (Main.MouseWorld.X - player.Center.X > 0) ? 1 : -1;
-            return true;
-        }
-		public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.Wood, 10);
-			recipe.AddIngredient(ItemID.Cobweb, 5);
-			recipe.AddTile(TileID.Tombstones);
-			recipe.Register();
+
+		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+		public override void AddRecipes() {
+			CreateRecipe(1)
+				.AddIngredient(ItemID.Wood, 10)
+                .AddIngredient(ItemID.Cobweb, 5)
+				.AddTile(TileID.Tombstones)
+				.Register();
 		}
 	}
 }

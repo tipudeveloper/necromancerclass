@@ -12,3 +12,5 @@ Items: {
 		Tooltip: ""
 	}
 }
+
+Projectiles.BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
