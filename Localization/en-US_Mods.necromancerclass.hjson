@@ -3,11 +3,11 @@ DamageClasses.Necromancer.DisplayName: Necromancer Damage
 Items: {
 	BoneDagger: {
 		DisplayName: Bone Dagger
-		Tooltip: Spooky
+		Tooltip: Made of fake bones
 	}
 
 	BoneHelmet: {
-		SetBonus: Mods.necromancerclass.Items.BoneHelmet.SetBonus
+		SetBonus: Increases necromancer damage by {0}%
 		DisplayName: Bone Helmet
 		Tooltip: ""
 	}
@@ -21,6 +21,14 @@ Items: {
 		Tooltip: ""
 		DisplayName: Bone Leggings
 	}
+
+	CorruptNeedle: {
+		DisplayName: Corrupt Needle
+		Tooltip: ""
+	}
 }
 
-Projectiles.BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
+Projectiles: {
+	BoneDaggerProjectile.DisplayName: Bone Dagger Projectile
+	CorruptNeedleProjectile.DisplayName: Corrupt Needle Projectile
+}

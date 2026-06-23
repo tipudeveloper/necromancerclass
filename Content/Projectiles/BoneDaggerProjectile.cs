@@ -152,19 +152,13 @@ namespace necromancerclass.Content.Projectiles
 		private readonly Point[] stickingJavelins = new Point[MaxStickingJavelin]; // The point array holding for sticking javelins
 
 		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
-            /*
-            int healAmount = 1;
+            
+            int healAmount = 3;
+			if (Main.rand.NextBool(10))
+			{
             Projectile.NewProjectile(
-            Projectile.GetSource_OnHit(target), 
-            target.Center, 
-            Vector2.Zero, 
-            ProjectileID.VampireHeal, 
-            0, 
-            0f, 
-            Main.myPlayer, 
-            Projectile.owner, 
-            healAmount
-        );*/
+				Projectile.GetSource_OnHit(target), target.Center, Vector2.Zero, ProjectileID.VampireHeal, 0, 0f, Main.myPlayer, Projectile.owner, healAmount
+        	);}
 
 			IsStickingToTarget = true; // we are sticking to a target
 			TargetWhoAmI = target.whoAmI; // Set the target whoAmI

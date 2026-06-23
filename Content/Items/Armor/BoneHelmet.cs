@@ -11,7 +11,7 @@ namespace necromancerclass.Content.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class BoneHelmet : ModItem
 	{
-		public static readonly int AdditiveNecromancerDamageBonus = 20;
+		public static readonly int AdditiveNecromancerDamageBonus = 10;
 
 		public static LocalizedText SetBonusText { get; private set; }
 
