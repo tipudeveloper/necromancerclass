@@ -1,0 +1,8 @@
+DamageClasses.Necromancer.DisplayName: Necromancer Damage
+
+Items: {
+	BoneDagger: {
+		DisplayName: Bone Dagger
+		Tooltip: "Spooky"
+	}
+}

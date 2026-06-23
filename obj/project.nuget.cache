@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ifw/+1Cs57s1ox8bGgUjhq/gIW9lGS+/vjiBQXAFYisMPD2rXF4g9aP+Sf2F73vHkLAP/3hfqSL5q84jSq4wGw==",
+  "success": true,
+  "projectFilePath": "/home/tipu/.local/share/Terraria/tModLoader/ModSources/necromancerclass/necromancerclass.csproj",
+  "expectedPackageFiles": [
+    "/home/tipu/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.25/microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}

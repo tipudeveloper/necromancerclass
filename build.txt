@@ -1,0 +1,3 @@
+displayName = Necromancer Class
+author = tipudeveloper
+version = 0.1
