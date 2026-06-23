@@ -141,6 +141,20 @@ namespace necromancerclass.Content.Projectiles
 		private readonly Point[] stickingJavelins = new Point[MaxStickingJavelin]; // The point array holding for sticking javelins
 
 		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
+            /*
+            int healAmount = 1;
+            Projectile.NewProjectile(
+            Projectile.GetSource_OnHit(target), 
+            target.Center, 
+            Vector2.Zero, 
+            ProjectileID.VampireHeal, 
+            0, 
+            0f, 
+            Main.myPlayer, 
+            Projectile.owner, 
+            healAmount
+        );*/
+
 			IsStickingToTarget = true; // we are sticking to a target
 			TargetWhoAmI = target.whoAmI; // Set the target whoAmI
 			Projectile.velocity = (target.Center - Projectile.Center) *
@@ -151,8 +165,6 @@ namespace necromancerclass.Content.Projectiles
 			// ExampleJavelinBuff handles the damage over time (DoT)
 			target.AddBuff(BuffID.OnFire, 900);
 
-			// KillOldestJavelin will kill the oldest projectile stuck to the specified npc.
-			// It only works if ai[0] is 1 when sticking and ai[1] is the target npc index, which is what IsStickingToTarget and TargetWhoAmI correspond to.
 			Projectile.KillOldestJavelin(Projectile.whoAmI, Type, target.whoAmI, stickingJavelins);
 		}
 
